@@ -1,0 +1,451 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    background-color: #0C2D57;
+    color: #EFECEC;
+    font-family: "Wix Madefor Text", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body a{
+    color: #EFECEC;
+}
+
+/* <uniquifier>: Use a unique and descriptive class name */
+/* <weight>: Use a value from 400 to 800 */
+
+/* .wix-text-font{
+  font-family: "Wix Madefor Text", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 650;
+  font-style: normal;
+} */
+
+/* .container-icon {
+    width: 2rem;
+} */
+
+header{
+    background-color: #18293F;
+    display: flex;
+    width: 100%;
+    height: 13dvh;
+    align-items: center;
+    text-align: center;
+    flex-wrap: nowrap;
+    gap: 3%;
+}
+
+header .logo{
+    height: 100%;
+}
+
+header .logo a{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .logo img{
+    height: 50%;
+    width: 50%;
+}
+
+header nav{
+    width: 50%;
+    margin: 0 auto;
+}
+
+header nav .nav-links{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+header a:hover, 
+header a:focus{
+    color: #FC6736;
+}
+
+header a{
+    text-decoration: none;
+}
+header ul{
+    list-style: none;
+}
+
+header a.menu, header a.menu button{
+    display: none;
+}
+
+header .menu, header .logo, header .button{
+    margin: 0 2%;
+}
+
+
+header .overlay{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: #0C2D57;
+    overflow: hidden;
+    transition: all 0.3s ease 0s;
+}
+
+/* header .overlay{
+    height: 100%;
+    width: 0;
+    position: sticky;
+    z-index: 1;
+    left: 0; /probar comentando esto
+    top: 0; /probar comentando esto
+    background-color: #84C7F2;
+    overflow: hidden;
+    transition: all 0.3s ease 0s;
+} */
+
+header .overlay .overlay-content{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header .overlay a{
+    padding: 15px;
+    font-size: 36px;
+    display: block;
+    transition: all 0.3 ease 0s;
+    font-weight: 700;
+    /* color: #EFECEC; */
+}
+
+/* header .overlay a:hover,
+header .overlay a:focus{
+    color: #FC6736;
+} */
+
+header .overlay .close{
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 65px;
+    cursor: pointer;
+}
+
+.carousels{
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.infinite-carousel{
+    height: 50%;
+}
+
+#carouselsContainer{
+    pointer-events: none;
+    z-index: -1;
+    height: 100dvh;
+    position: relative;
+
+    .infinite-carousel div {
+        filter: brightness(.4);
+        height: 100%;
+        display: inline-block;
+    }
+    
+    :first-child div{
+        animation: moverl 40s infinite linear;
+    }
+    :last-child div{
+        animation: movelr 50s infinite linear;
+    }
+}
+
+.infinite-carousel img {
+    height: 100%;
+    width: auto;
+}
+    
+#carteleraCarousel{
+    position: relative;
+    height: 70dvh;
+    margin: 0 1%;
+    pointer-events: all;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    display: flex;
+    align-items: center;
+
+    .infinite-carousel{
+        padding: 3%;
+        height: 100%;   
+    }
+    .infinite-carousel div{
+        height: 100%;
+        display: inline-block;
+    }
+    .infinite-carousel img{
+        margin: 0 5px;
+        transition: all 0.3s ease 0s;
+    }
+    .infinite-carousel:hover div{
+        animation-play-state: paused;
+    }
+    .infinite-carousel img:hover{
+        transform: scale(1.04);
+        box-shadow: 0px 0px 10px 2px #FFB0B0;
+    }
+}
+
+.introSection{
+    max-width: 100dvw;
+    position: relative;
+}
+
+.introduction{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: fit-content;
+    padding: 2dvh;
+    color: #ECECEB;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    row-gap: 3dvh;
+}
+
+.introduction h1{
+    font-size: 4rem;
+}
+
+button{
+    padding: 4px;
+    font-size: 1.4rem;
+    height: 7dvh;
+    font-weight: 600;
+    border-radius: 15px;
+    background-color: #FC6736;
+    color: #ECECEB;
+    border-color: none;
+    border-style: none;
+    transition: all 0.2s ease 0s;
+    border: 2px solid #FFB0B0;
+}
+
+.introduction button{
+    width: 30%;
+    margin: 2% 0%;
+    padding: 4px;
+    height: 7dvh;
+    font-size: 1.4rem;
+    font-weight: 600;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FC6736;
+    color: #ECECEB;
+    border-color: none;
+    border-style: none;
+    transition: all 0.2s ease 0s;
+    border: 2px solid #FFB0B0;
+}
+
+button:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 0px 5px 0px #FFB0B0;
+}
+
+.tendencias{
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.tendenciasContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    width: 100%
+}
+
+.tendenciasContainer div{
+    width: auto;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease 0s;
+}
+
+.tendenciasContainer div>h4{
+    display: none;
+    position: absolute;
+    height: min-content;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    margin: 0;
+    background-color: #FC6736;
+}
+
+.tendenciasContainer div>img{
+    max-width: 100%;
+}
+
+.tendenciasContainer div:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px 5px #FFB0B0;
+    h4{
+        display: block;
+    }
+}
+
+
+footer{
+    margin-top: 2rem;
+    height: min-content;
+    width: 100%;
+    background-color: #18293F;
+    padding: 10px;
+}
+
+footer ul{
+    width: 100%;
+    height: 100%;
+    display:flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    margin: 0;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+footer a{
+    text-decoration: none;
+}
+
+
+
+@keyframes moverl {
+    from{
+        transform: 
+            translate(0);
+    }
+    to {
+        transform:
+            translate(-100%);
+    }
+}
+
+@keyframes movelr {
+    from{
+        transform: 
+            translate(-100%);
+    }
+    to {
+        transform:
+            translate(0);
+    }
+}
+
+
+@media screen and (max-height:450px){/* agregarle la letra de todo maso */
+    header .overlay a{
+        font-size: 20px;
+    }
+    header .overlay .close{
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+@media screen and (max-width: 800px){
+    header .nav-links a, header .button{
+        display:none;
+    }
+    header a.menu, header a.menu button{
+        display: block;
+    }
+}
+
+
+@media screen and (max-width: 425px) {
+    .introduction button{
+        width: 90%;
+    }
+    body{
+        font-size: 1rem;
+    }
+    header{
+        font-size: 1.3em;
+    }
+    .tendenciasContainer div{
+        width: 90%;
+    }
+    footer ul{
+        flex-direction: column;
+    }
+}
+
+/* Medium devices (tablets, 640px and up) */
+@media screen and (min-width: 426px) {
+    .tendenciasContainer div{
+        width: 45%;
+    }
+    .introduction button{
+        width: min-content;
+        padding: 6%;
+    }
+    body{
+        font-size: 1.5rem;
+    }
+}
+
+/* Large devices (desktops, 1024px and up) */
+@media screen and (min-width: 900px) {
+    .tendenciasContainer div{
+        width: 30%;
+    }
+    .introduction button{
+        width: min-content;
+        padding: 2dvw 1dvw;
+    }
+    footer{
+        height: 15dvh;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {
+    .tendenciasContainer div{
+        width: 20%;
+    }
+
+}
+
+/* XXLarge devices (larger desktops, 1440px and up) */
+@media screen and (min-width: 1440px) {
+
+}
