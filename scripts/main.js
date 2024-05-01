@@ -15,6 +15,12 @@ const lugares = {
     upcoming: "upcoming"
 }
 
+document.addEventListener("DOMContentLoaded", ()=>{
+    armarCarouselsPeliculas("carouselsContainer", lugares.topRated, 2, true)
+    armarCarouselsPeliculas("carteleraCarousel", lugares.upcoming, null)
+    armarTendencias()
+})
+
 
 const armarCarouselsPeliculas = async (carouselID, lugar, page = null, duplicado = false) => {
     if ( !carouselID || lugar == "") {
@@ -29,8 +35,6 @@ const armarCarouselsPeliculas = async (carouselID, lugar, page = null, duplicado
     }
 
     const peliculas = response.results
-    console.log(peliculas);
-
     const carouselsContainer = document.getElementById(carouselID)
     const carouselsArray = Array.from(carouselsContainer.children)
 
@@ -52,15 +56,12 @@ const armarCarouselsPeliculas = async (carouselID, lugar, page = null, duplicado
     }
 }
 
-armarCarouselsPeliculas("carouselsContainer", lugares.topRated, 2, true)
-armarCarouselsPeliculas("carteleraCarousel", lugares.upcoming, null)
+
 
 const armarTendencias = async (page = 1) => {
     const response = await fetch(`${API_WEB}/movie/popular?page=${page}`, options).then(response => response.json()).catch(err => console.error(err))
     const peliculas = response.results
-    // console.log(peliculas);
     const tendenciasContainer = document.querySelector(".tendenciasContainer")
-    // console.log(tendenciasContainer);
 
     tendenciasContainer.innerHTML = "";
 
@@ -72,16 +73,11 @@ const armarTendencias = async (page = 1) => {
         tituloPelicula.textContent = pelicula.title
         imgPelicula.src = `${IMG_PREFIX}${pelicula.poster_path}`
 
-        // console.log(tituloPelicula, imgPelicula.src);
-
         contenedorPelicula.appendChild(imgPelicula)
         contenedorPelicula.appendChild(tituloPelicula)
         tendenciasContainer.appendChild(contenedorPelicula)
-
     })
-
 }
-armarTendencias()
 
 
 function openNav(){
